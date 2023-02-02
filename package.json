@@ -1,0 +1,22 @@
+{
+  "name": "ts-fundamentals",
+  "version": "1.0.0",
+  "description": "Project/practice work for the TS Fundamentals v3 course",
+  "main": "src/index.ts",
+  "scripts": {
+    "dev": "tsc --watch --preserveWatchOutput"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Trejdon/ts-fundamentals.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Trejdon/ts-fundamentals/issues"
+  },
+  "homepage": "https://github.com/Trejdon/ts-fundamentals#readme",
+  "devDependencies": {
+    "typescript": "^4.3.2"
+  }
+}
