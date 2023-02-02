@@ -1,7 +1,9 @@
 {
   "compilerOptions": {
+    "declaration": true,
+    "module": "CommonJS",
     "outDir": "dist",
-    "target": "ES3"
-  }, 
+    "target": "ES2017"
+  },
   "include": ["src"]
 }
