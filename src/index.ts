@@ -84,3 +84,51 @@ type phones = {
       }
     | undefined; // Nice to add
 };
+
+// Array types
+const fileExtensions = ["js", "ts"]; // type string[], inference gets this right
+
+// Tuple types, (positional arrays where each element has a specific type)
+
+// let carTuple = [2018, "Subaru", "WRX"]
+// Inference types this as (string | number)[]
+// However this is not ideal since we always want the first element to be a number.
+// We can explicitly type this order
+let carTuple: [number, string, string] = [2018, "Subaru", "WRX"];
+
+// That being said, mutating the array won't be held to this type constraint since TS can only check this at assignment
+
+
+// JSON Exercise
+
+// @errors: 2578
+type JSONPrimitive = number | string | boolean | null
+type JSONObject = {
+    [k: string]: JSONValue
+}
+type JSONArray = JSONValue[]
+type JSONValue = JSONObject | JSONArray | JSONPrimitive
+
+////// DO NOT EDIT ANY CODE BELOW THIS LINE //////
+function isJSON(arg: JSONValue) {}
+
+// POSITIVE test cases (must pass)
+isJSON("hello")
+isJSON([4, 8, 15, 16, 23, 42])
+isJSON({ greeting: "hello" })
+isJSON(false)
+isJSON(true)
+isJSON(null)
+isJSON({ a: { b: [2, 3, "foo"] } })
+
+// NEGATIVE test cases (must fail)
+// @ts-expect-error
+isJSON(() => "")
+// @ts-expect-error
+isJSON(class {})
+
+isJSON(undefined)
+// @ts-expect-error
+isJSON(BigInt(143))
+// @ts-expect-error
+isJSON(isJSON)
